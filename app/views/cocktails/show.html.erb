@@ -12,7 +12,14 @@
         </li>
       <% end %>
     </ul>
- <%= link_to "add ingredient", new_cocktail_dose_path(@cocktail) %>
+        <%= simple_form_for @cocktail do |f| %>
+          <%= f.input :name %>
+          <%= f.input :photo %>
+          <%= f.input :photo_cache, as: :hidden %>
+          <%= f.submit class: 'btn btn-primary' %>
+        <% end %>
+
+        <%= link_to "add ingredient", new_cocktail_dose_path(@cocktail) %>
   </div>
     <%= link_to "See all Cocktails", cocktails_path %>
 </div>

@@ -1,9 +1,18 @@
-<h1><%= @cocktail.name %></h1>
- <div>
-    <%= simple_form_for([@cocktail, @dose]) do |f| %>
-    <%= f.association :ingredient %>
-    <%= f.input :description, placeholder: "Dose" %>
-    <%= f.submit "Add ingredient", class: "btn btn-success" %>
-    <% end %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://pngimg.com/uploads/cocktail/cocktail_PNG122.png);">
+      <h1><%= @cocktail.name %></h1>
+      </div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+       <div>
+          <%= simple_form_for([@cocktail, @dose]) do |f| %>
+          <%= f.association :ingredient %>
+          <%= f.input :description, placeholder: "Dose" %>
+          <%= f.submit "Add ingredient", class: "btn btn-success" %>
+          <% end %>
+        </div>
+        <%= link_to "See all Cocktails", cocktails_path %>
+        <%= link_to "Back to Cocktails", cocktail_path(@cocktail) %>
+    </div>
   </div>
-
+</div>

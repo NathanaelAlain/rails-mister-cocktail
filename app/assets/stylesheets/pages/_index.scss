@@ -1,2 +1,8 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.list-group-item > img {
+  object-fit: cover;
+  height: 400px;
+  width: 200px;
+}

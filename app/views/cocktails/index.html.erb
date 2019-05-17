@@ -1,12 +1,15 @@
+      <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://pngimg.com/uploads/cocktail/cocktail_PNG122.png);">
+      <h1>All coktails</h1>
+      </div>
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-      <h1>All coktails</h1>
+
       <ul class="list-group">
         <% @cocktails.each do |cocktail| %>
           <li class="list-group-item">
             <%= link_to cocktail.name, cocktail_path(cocktail) %>
-            <%= cl_image_tag cocktail.photo, height: 300, width: 400, crop: :fill %>
+            <%= cl_image_tag cocktail.photo, crop: :fill %>
           </li>
         <% end %>
       </ul>

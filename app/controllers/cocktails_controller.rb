@@ -1,5 +1,5 @@
+# controller
 class CocktailsController < ApplicationController
-
   def index
     @cocktails = Cocktail.all
   end
@@ -15,7 +15,11 @@ class CocktailsController < ApplicationController
 
   def update
     @cocktail = Cocktail.find(params[:id])
-
+    if @cocktail.update(cocktail_params)
+      redirect_to cocktail_path(@cocktail)
+    else
+      render :show
+    end
   end
 
   def create
